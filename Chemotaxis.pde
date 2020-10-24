@@ -11,7 +11,7 @@ void draw() {
   background(250,250,250);
   ellipse(200,200,460,460);
   stroke(200);
-  strokeWeight(100);
+  strokeWeight(2);
   line(150,150,250,150);
   line(150,150,150,250);
   line(250,250,150,250);

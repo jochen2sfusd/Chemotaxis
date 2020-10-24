@@ -1,20 +1,21 @@
 Bacteria[] bob;
 void setup() {
-  size(500,500);
+  size(400,400);
   bob = new Bacteria[10];
   for(int i =0; i < bob.length; i++) {
     bob[i] = new Bacteria();
   }
 }
 void draw() {
-  fill(100);
+  fill(255,200,0);
   background(250,250,250);
-  ellipse(250,75,450,125);
-  ellipse(250,425,450,125);
-  stroke(100);
-  strokeWeight(3);
-  line(475,75,475,425);
-  line(25,75,25,425);
+  ellipse(200,200,460,460);
+  stroke(200);
+  strokeWeight(100);
+  line(150,150,250,150);
+  line(150,150,150,250);
+  line(250,250,150,250);
+  line(250,250,250,150);
   for(int i = 0; i < bob.length; i++) {
     bob[i].show();
     bob[i].walk();
@@ -23,19 +24,19 @@ void draw() {
 class Bacteria {
    int myX, myY, myCol;
    Bacteria() {
-     myX = (int)(Math.random()*200+125);
-     myY = (int)(Math.random()*200+125);
+     myX = (int)(Math.random()*100+150);
+     myY = (int)(Math.random()*100+150);
      myCol = 200;
   }
   void walk() {
-    if(myX < 25)
-      myX += 10;
-    else if(myX > 475)
-      myX -= 10;
-    if(myY < 75)
-      myY += 10;
-    else if(myY > 425)
-      myY -= 10;
+    if(myX < 150)
+      myX += 5;
+    else if(myX > 250)
+      myX -= 5;
+    if(myY < 150)
+      myY += 5;
+    else if(myY > 250)
+      myY -= 5;
     if(mouseX > myX)
       myX = myX + (int)(Math.random()*5)-1;
     else
@@ -45,9 +46,7 @@ class Bacteria {
     else
       myY = myY + (int)(Math.random()*5)-3;
   }
-  void show()
-  {
-    noStroke();
+  void show() {
     fill(0, myCol, 0);
     ellipse(myX,myY,10,10);
   }
